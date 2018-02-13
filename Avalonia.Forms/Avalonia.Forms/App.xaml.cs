@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace Avalonia.Forms
 {
-	public partial class App : Application
+	public partial class App : Xamarin.Forms.Application
 	{
 		public App ()
 		{

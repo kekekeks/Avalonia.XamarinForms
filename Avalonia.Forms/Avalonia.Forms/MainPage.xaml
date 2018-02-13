@@ -2,10 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Avalonia.Forms"
+             xmlns:droid="clr-namespace:Avalonia.Forms.Droid;assembly=Avalonia.Forms.Android"
              x:Class="Avalonia.Forms.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+	<StackLayout>
+        <Entry Text="Android native textbox" VerticalOptions="Start"/>
+        <Button Text="Android button" VerticalOptions="Start"/>
+        <droid:AvaloniaFormsView VerticalOptions="FillAndExpand" HorizontalOptions="Fill" x:Name="AvaloniaView" />
+        <DatePicker VerticalOptions="End"/>
+    </StackLayout>
 </ContentPage>

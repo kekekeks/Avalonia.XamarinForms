@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Util;
 
 namespace Avalonia.Forms.Droid
 {
@@ -14,10 +15,12 @@ namespace Avalonia.Forms.Droid
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
-			TabLayoutResource = Resource.Layout.Tabbar;
-			ToolbarResource = Resource.Layout.Toolbar; 
+            Log.Debug("APP", "OnCreate");
+            base.OnCreate(bundle);
 
-			base.OnCreate (bundle);
+            
+
+            Avalonia.AppBuilder.Configure<ControlCatalog.App>().UseAndroid().UseSkia().SetupWithoutStarting();
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 			LoadApplication (new Avalonia.Forms.App ());
